@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score table</title>
+    <style>
+      .container {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-color: grey;
+        border: solid;
+        border-color: red;
+        width: 300px;
+      }
+      .title {
+        text-transform: uppercase;
+        color: rgb(56, 56, 203);
+        font-size: larger;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-weight: bold;
+      }
+      .function {
+        width: 100%;
+      }
+      .semester,
+      .year,
+      .summarize {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+      .semester p,
+      .year p,
+      .summarize p {
+        width: 100px;
+        text-align: right;
+      }
+      .year input {
+        width: 30px;
+      }
+      #result {
+        color: red;
+        font-size: 30px;
+        padding-left: 10px;
+      }
+      .button {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="title">Bang diem cua em</p>
+      <div class="function">
+        <div class="semester">
+          <p>Semester 1:</p>
+          <input type="text" id="semester1" />
+        </div>
+        <div class="semester">
+          <p>Semester 2:</p>
+          <input type="text" id="semester2" />
+        </div>
+        <div class="year">
+          <p>Year:</p>
+          <select id="yearSelect" style="color: red">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <div class="summarize">
+          <p>Summarize:</p>
+          <input type="text" id="summarize" readonly />
+        </div>
+        <p id="result"></p>
+      </div>
+      <div class="button">
+        <button id="okButton">Ok</button>
+        <button id="cancelButton">Cancel</button>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("okButton")
+        .addEventListener("click", function () {
+          const semester1 = parseFloat(
+            document.getElementById("semester1").value
+          );
+          const semester2 = parseFloat(
+            document.getElementById("semester2").value
+          );
+          const year = parseInt(document.getElementById("yearSelect").value);
+
+          if (isNaN(semester1) && isNaN(semester2)) {
+            document.getElementById("summarize").value = "Invalid input!";
+          } else {
+            const average = (semester1 + semester2 * year) / (year + 1);
+            if (average >= 8) {
+              document.getElementById("result").innerHTML = "Hoc sinh gioi";
+            } else if (average >= 6.5) {
+              document.getElementById("result").innerHTML = "Hoc sinh kha";
+            } else if (average >= 5) {
+              document.getElementById("result").innerHTML =
+                "Hoc sinh trung binh";
+            } else {
+              document.getElementById("result").innerHTML = "Hoc sinh yeu";
+            }
+            document.getElementById("summarize").value = average;
+          }
+        });
+
+      // Clear all inputs when the Cancel button is clicked
+      document
+        .getElementById("cancelButton")
+        .addEventListener("click", function () {
+          document.getElementById("semester1").value = "";
+          document.getElementById("semester2").value = "";
+          document.getElementById("summarize").value = "";
+          document.getElementById("yearSelect").value = "1";
+          document.getElementById("result").innerHTML = "";
+        });
+    </script>
+  </body>
+</html>
