@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 10px;
+      }
+
+      .logo {
+        text-transform: uppercase;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: larger;
+        position: absolute;
+        left: 10px;
+      }
+
+      .menu {
+        display: flex;
+        gap: 15px;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+      }
+
+      .product {
+        position: relative;
+        padding: 10px;
+      }
+
+      .thumbnail {
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+      }
+
+      .product button {
+        width: 100px;
+        height: 20px;
+        position: absolute;
+        right: 10px;
+        background: red;
+        border-radius: 3px;
+        color: white;
+      }
+
+      .product img {
+        width: 100%;
+        height: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <p>women's products</p>
+          <hr width="100%" color="black" size="3" />
+        </div>
+        <div class="menu">
+          <ul>
+            All
+          </ul>
+          <ul>
+            Clothings
+          </ul>
+          <ul>
+            Bags
+          </ul>
+          <ul>
+            Shoes
+          </ul>
+          <ul>
+            Watches
+          </ul>
+          <ul>
+            Googles
+          </ul>
+        </div>
+      </div>
+      <hr width="100%" color="black" />
+      <div class="content">
+        <div class="products">
+          <div class="product">
+            <img
+              src="https://i.pinimg.com/236x/aa/50/2e/aa502e1db1c2ad038c835d9238cdf612.jpg"
+              alt="Women Bags"
+            />
+            <p>Women Bags</p>
+            <hr width="100%" color="grey" />
+            <p>$100.00</p>
+            <button>Add to cart</button>
+          </div>
+          <div class="product">
+            <img
+              src="https://i.pinimg.com/236x/2f/bd/29/2fbd2944d277315b9b243f53e056a41c.jpg"
+              alt="Googles"
+            />
+            <p>Googles</p>
+            <hr width="100%" color="grey" />
+            <p>$100.00</p>
+            <button>Add to cart</button>
+          </div>
+        </div>
+        <img
+          class="thumbnail"
+          src="https://i.pinimg.com/236x/44/5e/fa/445efa2604ed4e4aaa986d3f8866946b.jpg"
+        />
+      </div>
+    </div>
+  </body>
+</html>

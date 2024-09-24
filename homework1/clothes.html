@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h1>New Product</h1>
+    <hr>
+    <div class="section">
+    <form id="form">
+        <p>
+            <label>
+                Product Name
+                <input type="text" name="pname" id="pname">
+            </label>
+        </p>
+        <p>
+            <label>
+                Product Quantity
+                <input type="text" name="qty" id="qty">
+            </label>
+        </p>
+        <p>
+            <label>
+                Product Price
+                <input type="text" name="pri" id="pri">
+            </label>
+        </p>
+        <p>
+            <button type="button" onclick="add()">Add</button>
+            <button type="button" >Cancel</button>
+        </p>
+    </form>
+    <table id="tb">
+        <thead id="thead">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th><br>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="total">0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="add.js"></script>
+</body>
+</html>
