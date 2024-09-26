@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Customer Order Form</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-
 </head>
 <body>
-    Customer Name:
-    <br>
-    <input type="text" id="name">
-    <br>
-    ID:
-    <br>
-    <input type="text" id="id">
-    <br>
-    Product Name:
-    <br>
-    <input type="text" id="product">
-    <br>
-    Quantity:
-    <br>
-    <input type="text" id="qty">
-    <br>
-    Price:
-    <br>
-    <input type="text" id="price">
-    <br>
-    <button onclick="save()">Save</button>
-    <button onclick="show()">Show</button>
-    <button onclick="reset()">Reset</button>
-    <table>
+    <h1>Customer Order Form</h1> 
+    <form id="customerForm">
+        <label for="name">Customer Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label for="id">ID:</label><br>
+        <input type="text" id="id" required><br><br>
+
+        <label for="product">Product Name:</label><br>
+        <input type="text" id="product" required><br><br>
+
+        <label for="qty">Quantity:</label><br>
+        <input type="text" id="qty" ><br><br>
+
+        <label for="price">Price:</label><br>
+        <input type="text" id="price" ><br><br>
+
+        <button type="button" onclick="save()">Save</button>
+        <button type="button" onclick="show()">Show</button>
+        <button type="reset" onclick="reset()">Reset</button> 
+    </form>
+
+    <h2>Order Summary</h2>
+    <table id="orderTable">
         <thead>
             <tr>
-                <th>Auto Increment</th>
+                <th>#</th>
                 <th>Customer Name</th>
                 <th>ID</th>
                 <th>Product Name</th>
