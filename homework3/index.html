@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shop DEBUG</title>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <p>Shop DEBUG</p>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#" onclick="showProducts('male')">Thời trang nam</a></li>
+                    <li><a href="#" onclick="showProducts('female')">Thời trang nữ</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li>
+                        <input type="text" placeholder="Tìm kiếm...">
+                        <button>Tìm kiếm</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1 class="title" id="category-title">THỜI TRANG NỮ</h1>
+            <div id="products" class="product-list"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
