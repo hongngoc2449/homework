@@ -48,7 +48,7 @@ var updateRoom = function(i) {
     document.getElementById("priceUpdate").value = selectedRoom.price;
     document.getElementById("idUpdate").setAttribute("disabled", "disabled");
     document.getElementById("submitUpdate").innerHTML = '<button class="btn btn-outline-primary mt-3" onclick="submitUpdate(' + i + ')">Cập nhật</button>';
-};
+};  
 
 var submitUpdate = function(i) {
     var selectedRoom = room[i];
