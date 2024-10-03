@@ -66,6 +66,7 @@ function showProducts(category) {
         productElement.innerHTML = `
             <img src="${product.img}" alt="${product.name}" class="product-img">
             <h3 class="product-name">${product.name}</h3>
+            ${product.id ? `<p class="product-id">${product.id}</p>` : ''}
             ${product.salePrice ? `<p class="product-sale-price">${product.salePrice}</p>` : ''}
             <p class="product-price" style="${category === 'male' ? 'text-decoration: none;' : ''}">${product.price}</p>
             <button class="btn-order">Đặt Mua</button>
