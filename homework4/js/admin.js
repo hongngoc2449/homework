@@ -7,6 +7,7 @@ var roomAdmin = function() {
         listRoom += '<td>' + data.name + '</td>';
         listRoom += '<td>' + data.floor + '</td>';
         listRoom += '<td>' + data.type + '</td>';
+        listRoom +='<td><img src="../img/'+data.img+'" alt="" style="width: 50px;"></td>';
         listRoom += '<td>' + data.price + '</td>';
         listRoom += '<td><button onclick="updateRoom('
             + i + ')" class="btn btn-outline-primary" data-toggle="modal" data-target="#updateRoom"><i class="fas fa-cogs"></i></button>';
@@ -24,6 +25,7 @@ var addRoom = function() {
         name: document.getElementById("name").value,
         floor: document.getElementById("floor").value,
         type: document.getElementById("type").value,
+        img: document.getElementById("img").value,
         price: document.getElementById("price").value
     };
     room.push(roomObj);
@@ -61,7 +63,6 @@ var submitUpdate = function(i) {
     window.location.reload();
 };
 
-// Quản lý người dùng
 var userAdmin = function() {
     var listUser = "";
     for (var i in user) {
@@ -70,10 +71,8 @@ var userAdmin = function() {
         listUser += '<td>' + data.id + '</td>';
         listUser += '<td>' + data.username + '</td>';
         listUser += '<td>' + data.email + '</td>';
-        listUser += '<td><button onclick="updateUser('
-            + i + ')" class="btn btn-outline-primary" data-toggle="modal" data-target="#updateUser"><i class="fas fa-cogs"></i></button>';
-        listUser += '<button onclick="deleteUser('
-            + i + ')" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>';
+        listUser += '<td><button onclick="updateUser('+ i + ')" class="btn btn-outline-primary" data-toggle="modal" data-target="#updateUser"><i class="fas fa-cogs"></i></button>';
+        listUser += '<button onclick="deleteUser('+ i + ')" class="btn ml-1 btn-outline-warning"><i class="fas fa-trash"></i></button></td>';
         listUser += '</tr>';
 
         document.getElementById("user-admin").innerHTML += listUser;

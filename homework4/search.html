@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm Phòng</title>
+    <link rel="stylesheet" href="css/style-detail.css"> 
+</head>
+<body>
+    <form id="searchForm" class="search-form">
+        <input type="text" id="roomName" placeholder="Enter room name" class="search-input" required>
+        <button type="submit" class="search-submit">Search</button>
+    </form>
+    <div id="result" class="result"></div>
+
+    <script>
+        const rooms = [
+            {code : 'P1', name : 'Room 1'},
+            {code : 'P2', name : 'Room 2'},
+            {code : 'P3', name : 'Room 3'},
+            {code : 'P4', name : 'Room 4'},
+            {code : 'P5', name : 'Room 5'},
+        ];
+
+        localStorage.setItem('rooms', JSON.stringify(rooms));
+        
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('roomName').value.toLowerCase();
+            const rooms = JSON.parse(localStorage.getItem('rooms')); 
+            const foundRoom = rooms.filter(p => p.name.toLowerCase().includes(name));
+            const result = document.getElementById('result');
+            
+            if(foundRoom.length > 0){
+                result.innerHTML = foundRoom.map(p => `<p>Found: ${p.name} (Code: ${p.code})</p>`).join('');
+            } else {
+                result.innerHTML = '<p>Not found</p>';
+            }
+        });
+    </script>
+</body>
+</html>
