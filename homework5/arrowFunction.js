@@ -1,6 +1,10 @@
-const perimeter = (width,height) => 2 * (width + height);
-const area = (width,height) => width * height;
-const width = 5;
-const height = 10;
-console.log("Chu vi hinh chu nhat la: " + perimeter(width,height));
-console.log("Dien tich hinh chu nhat la: " + area(width,height));
+function tinh(){
+    const perimeter = (width,height) => 2 * (width + height);
+    const area = (width,height) => width * height;
+    
+    const width = parseFloat(document.getElementById("width").value);
+    const height = parseFloat(document.getElementById("height").value);
+    
+    document.getElementById("chuvi").innerHTML = perimeter(width,height);
+    document.getElementById("dientich").innerHTML = area(width,height);
+}
